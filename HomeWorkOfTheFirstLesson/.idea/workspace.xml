@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8dc36d4c-47c8-4006-963d-cf0029975f50" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../HomeWorkOfTheSecondLesson/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HomeWorkOfTheSecondLesson/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HomeWorkOfTheSecondLesson/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HomeWorkOfTheSecondLesson/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HomeWorkOfTheSecondLesson/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HomeWorkOfTheSecondLesson/HomeWorkOfTheSecondLesson.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HomeWorkOfTheSecondLesson/src/ClamshellPhone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HomeWorkOfTheSecondLesson/src/Phone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HomeWorkOfTheSecondLesson/src/SliderPhone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HomeWorkOfTheSecondLesson/src/TouchPhone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="8dc36d4c-47c8-4006-963d-cf0029975f50" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
