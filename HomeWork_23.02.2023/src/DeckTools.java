@@ -1,7 +1,8 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class DeckTools {
+public class DeckTools extends Errors{
+
     Errors errors = new Errors();
     final Random random = new Random();
     Suits[] suits = Suits.values();
@@ -24,6 +25,7 @@ public class DeckTools {
     }
 
     public void deckShuffling() {
+
         for (int i = 0; i < numberOfCards; i++) {
             int card = i + (random.nextInt(numberOfCards - i)); // random card in the deck
             String temp = deck[card];
@@ -31,19 +33,20 @@ public class DeckTools {
             deck[i] = temp;
         }
     }
-    int players;
+
 
 
 
 
     public void theShuffledDeckIsDisplayed() {
-        errors.setPlayers(players);
-        for (int i = 0; i < errors.getPlayers() * cardsForPlayer; i++) {
+        for (int i = 0; i < 2 * cardsForPlayer; i++) {
             System.out.println(deck[i]);
+
 
             if (i % cardsForPlayer == cardsForPlayer - 1)
                 System.out.println();
         }
+        System.out.println(errors.getPlayers());
     }
 
     public int getNumberOfCards() {

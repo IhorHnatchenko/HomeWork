@@ -3,15 +3,14 @@ import java.util.Scanner;
 public class Errors {
 
     private int players;
+    final Scanner sc = new Scanner(System.in);
 
     public void errorsLogic() {
-        final Scanner sc = new Scanner(System.in);
+
         DeckTools deckTool = new DeckTools();
-        deckTool.showNumberOfCards();
 
         while (true) {
             System.out.print("Enter the number of players: ");
-
             if (sc.hasNextInt()) {
                 players = sc.nextInt();
                 if (deckTool.getCardsForPlayer() * players <= deckTool.getNumberOfCards()) {
@@ -30,8 +29,9 @@ public class Errors {
                 System.out.println("You have not entered a number, or your number is too large!");
             }
         }
-        players = sc.nextInt();
+
         sc.close();
+
 
     }
     public void setPlayers(int players){
@@ -41,4 +41,6 @@ public class Errors {
     public int getPlayers() {
         return this.players;
     }
+
+
 }
