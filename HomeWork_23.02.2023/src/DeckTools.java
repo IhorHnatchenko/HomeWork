@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class DeckTools extends Errors{
+public class DeckTools extends Errors {
 
     Errors errors = new Errors();
     final Random random = new Random();
@@ -35,18 +35,15 @@ public class DeckTools extends Errors{
     }
 
 
-
-
-
-    public void theShuffledDeckIsDisplayed() {
-        for (int i = 0; i < 2 * cardsForPlayer; i++) {
+    public void theShuffledDeckIsDisplayed(int players) {
+        for (int i = 0; i < players * cardsForPlayer; i++) {
             System.out.println(deck[i]);
 
 
             if (i % cardsForPlayer == cardsForPlayer - 1)
                 System.out.println();
         }
-        System.out.println(errors.getPlayers());
+        System.out.println(players);
     }
 
     public int getNumberOfCards() {

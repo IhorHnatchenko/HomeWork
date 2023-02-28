@@ -1,11 +1,10 @@
-import java.util.Random;
-import java.util.Scanner;
-
 public class Deal {
+    private int players = 0;
     public static void main(String[] args) {
-
+        Deal deal = new Deal();
         Errors errors = new Errors();
-        errors.errorsLogic();
+        deal.players = errors.errorsLogic();
+
 
         DeckTools deckTool = new DeckTools();
 
@@ -16,7 +15,6 @@ public class Deal {
         deckTool.deckShuffling();
 
         //The shuffled deck is displayed
-        deckTool.theShuffledDeckIsDisplayed();
+        deckTool.theShuffledDeckIsDisplayed(deal.players);
     }
-
 }

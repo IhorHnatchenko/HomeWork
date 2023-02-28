@@ -2,13 +2,14 @@ import java.util.Scanner;
 
 public class Errors {
 
-    private int players;
+
     final Scanner sc = new Scanner(System.in);
 
-    public void errorsLogic() {
+    public int errorsLogic() {
 
         DeckTools deckTool = new DeckTools();
 
+        int players;
         while (true) {
             System.out.print("Enter the number of players: ");
             if (sc.hasNextInt()) {
@@ -31,16 +32,6 @@ public class Errors {
         }
 
         sc.close();
-
-
+        return players;
     }
-    public void setPlayers(int players){
-        this.players = players;
-    }
-
-    public int getPlayers() {
-        return this.players;
-    }
-
-
 }
