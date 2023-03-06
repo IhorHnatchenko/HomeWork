@@ -143,7 +143,7 @@ public class Main {
                 if (extraCounterForWin == 20) {
                     break;
                 }
-            } else{
+            } else {
                 System.out.println("Mis. Your opponents turn.");
                 extraEnemyFiled[x][y] = 1;
                 break;
