@@ -10,80 +10,85 @@ public class Main {
         System.out.println("Exercise 1");
         int temp = 0;
         List<Integer> integers = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10000001; i++) {
             integers.add(i);
-            temp += i;
+            temp = i;
         }
-        System.out.print(" " + integers + "\n");
         System.out.println("Temp for normal cycle = " + temp + "\n");
 
 
         // Exercise 2
-        int tempEx2 = 0;
-        System.out.println("Exercise 2");
+        System.out.println("For-each loop: ");
+        long l1 = System.currentTimeMillis();
         for (Integer integer : integers) {
-            System.out.print(" " + integer);
-            tempEx2 += integer;
+            //
         }
-        System.out.print("\nTemp for exercise 2 = " + tempEx2);
+        long l2 = System.currentTimeMillis();
+
+        System.out.print("Temp for-each loop = " + (l2 - l1));
         System.out.println("\n");
 
         // Exercise 3
-        int tempEx3 = 0;
-        System.out.println("Exercise 3");
+        System.out.println("Classic for with call integers.size: ");
+        long l3 = System.currentTimeMillis();
         for (int i = 0; i < integers.size(); i++) {
-            System.out.print(" " + i);
-            tempEx3 += i;
+            integers.size();
         }
-        System.out.print("\nTemp for exercise 3 = " + tempEx3);
+        long l4 = System.currentTimeMillis();
+        System.out.print("Temp classic for = " + (l4 - l3));
         System.out.println("\n");
 
         // Exercise 4
-        int tempEx4 = 0;
-        int size = integers.size();
-        System.out.println("Exercise 4");
-        for (int i = 0; i > size; i++){
-            System.out.print(i);
-            tempEx4 += i;
+        System.out.println("Classic for with defined integers.size in a variable: ");
+        long l5 = System.currentTimeMillis();
+        for (int i = 0; i < integers.size(); i++) {
+            int size = integers.size();
         }
-        System.out.println();
+        long l6 = System.currentTimeMillis();
+        System.out.print("Temp for with variable = " + (l6 - l5));
+        System.out.println("\n");
 
         // Exercise 5
-        int tempEx5 = 0;
-        System.out.println("Exercise 5");
+        System.out.println("Classic for with defined integers.size in a variable, ");
+        System.out.println("and picking from the end: ");
+        long l7 = System.currentTimeMillis();
         for (int i = integers.size(); i > 0; i--) {
-            System.out.print(" " + i);
-            tempEx5 += i;
+            int size = integers.size();
         }
-        System.out.print("\nTemp for exercise 5 = " + tempEx5);
+        long l8 = System.currentTimeMillis();
+        System.out.print("Temp for with variable and picking from the end = " + (l8 - l7));
         System.out.println("\n");
 
         // Exercise 6
-        int tempEx6 = 0;
-        System.out.println("Exercise 6");
+        System.out.println("Work with iterator: ");
         Iterator<Integer> iterator = integers.iterator();
-        while (iterator.hasNext()){
-            tempEx6 += iterator.next();
+        long l9 = System.currentTimeMillis();
+        while (iterator.hasNext()) {
+            iterator.next();
         }
-        System.out.print("Temp for exercise 6 = " + tempEx6);
+        long l10 = System.currentTimeMillis();
+        System.out.print("Temp iterator = " + (l10 - l9));
         System.out.println("\n");
 
         //Exercise 7
-        System.out.println("Exercise 7");
-        int tempListIterator = 0;
+        System.out.println("Work with list iterator: ");
         ListIterator<Integer> integerListIterator = integers.listIterator();
-        while (integerListIterator.hasNext()){
-            tempListIterator += integerListIterator.next();
+        long l11 = System.currentTimeMillis();
+        while (integerListIterator.hasNext()) {
+            integerListIterator.next();
         }
-        System.out.print("Temp for list iterator = " + tempListIterator);
+        long l12 = System.currentTimeMillis();
+        System.out.print("Temp list iterator = " + (l12 - l11));
         System.out.println("\n");
 
-        int tempListIteratorRev = 0;
+        System.out.println("Work with list iterator revers: ");
         ListIterator<Integer> integerListIterator1 = integers.listIterator(integers.size());
-        while (integerListIterator1.hasPrevious()){
-            tempListIteratorRev += integerListIterator1.previous();
+        long l13 = System.currentTimeMillis();
+        while (integerListIterator1.hasPrevious()) {
+            integerListIterator1.previous();
         }
-        System.out.println("Temp for list iterator revers = " + tempListIteratorRev);
+        long l14 = System.currentTimeMillis();
+        System.out.println("Temp list iterator revers = " + (l14 - l13));
         System.out.println("\n");
 
     }
