@@ -5,10 +5,17 @@ public class Node {
 
     //private Node prev;
 
+    private int index;
+
     public Node(Integer data, Node next/*, Node prev*/) {
         this.data = data;
         this.next = next;
         //this.prev = prev;
+    }
+
+    public Node(Integer data, int index){
+        this.data = data;
+        this.index = index;
     }
 
     public Integer getData() {
@@ -34,4 +41,11 @@ public class Node {
     public void setPrev(Node prev) {
         this.prev = prev;
     }*/
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "data=" + data +
+                '}';
+    }
 }
