@@ -23,7 +23,7 @@ public class Main  {
         System.out.print("\nList sort by name:");
         List<Person> personListSortByName = personList;
         SortByName sortByName = new SortByName();
-        Collections.sort(personListSortByName,sortByName);
+        Collections.sort(personListSortByName, sortByName);
         System.out.println("\n" + personListSortByName);
 
         System.out.print("\nList sort by last name:");

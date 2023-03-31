@@ -8,7 +8,7 @@ public class Main {
         myArrayDeque.addToHead(32);
         myArrayDeque.addToHead(12);
 
-        //myArrayDeque.addToHead(99);
+        myArrayDeque.addToHead(99);
 
         myArrayDeque.addToTail(7);
         myArrayDeque.addToTail(44);

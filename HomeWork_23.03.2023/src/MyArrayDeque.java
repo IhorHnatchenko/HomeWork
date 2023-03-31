@@ -2,10 +2,13 @@ import java.util.NoSuchElementException;
 
 public class MyArrayDeque implements MyDeque {
 
+
     private Integer[] elements;
     private int numberOfElements;
     private int indexHead = 0;
     private int indexTail;
+
+    private int MAX_SIZE = 200;
 
     public MyArrayDeque(int initialCapacity) {
         if (initialCapacity > 0) {
@@ -17,10 +20,8 @@ public class MyArrayDeque implements MyDeque {
     @Override
     public void addToHead(Integer element) {
         if (numberOfElements == elements.length) {
-/*            Integer temp[] = new Integer[elements.length * 2];
-            System.arraycopy(elements, 0, temp, 0, indexHead);
-            this.elements = temp;*/
-            throw new IllegalStateException("Deque is full.");
+            grow();
+            //throw new IllegalStateException("Deque is full.");
         }
         elements[indexHead] = element;
         indexHead++;
@@ -30,14 +31,51 @@ public class MyArrayDeque implements MyDeque {
     @Override
     public void addToTail(Integer element) {
         if (numberOfElements == elements.length) {
-/*            Integer temp[] = new Integer[elements.length * 2];
-            System.arraycopy(elements, indexHead, temp, indexHead+1, elements.length-indexHead);
-            this.elements = temp;*/
-            throw new IllegalStateException("Deque is full.");
+            grow();
+            //throw new IllegalStateException("Deque is full.");
         }
         elements[indexTail] = element;
         indexTail--;
         numberOfElements++;
+    }
+
+    private void grow() {
+        int newCapacity = calculateNewCapacity(elements.length);
+        growToNewCapacity(newCapacity);
+    }
+
+    private int calculateNewCapacity(int currentCapacity) {
+        if (currentCapacity == MAX_SIZE) {
+            throw new IllegalStateException("Can't grow further");
+        }
+
+        int newCapacity = currentCapacity + calculateAdditionalCapacity(currentCapacity);
+
+        if (newCapacity > MAX_SIZE || newCapacity < 0) {
+            newCapacity = MAX_SIZE;
+        }
+
+        return newCapacity;
+    }
+
+    private int calculateAdditionalCapacity(int currentCapacity) {
+        return currentCapacity < 255 ? currentCapacity : (int) (currentCapacity / 1.75);
+    }
+
+    private void growToNewCapacity(int newCapacity) {
+        Integer[] newArray = new Integer[newCapacity];
+
+        int startIndex = elements.length / 2 + 1;
+        System.arraycopy(elements, startIndex, newArray, newArray.length / 2 + 1, newArray.length / 2 + indexTail);
+
+        startIndex = newArray.length / 2 - indexHead - 1;
+        if (indexTail > 0) {
+            System.arraycopy(elements, indexHead, newArray, startIndex, newArray.length / 2);
+        }
+
+        indexHead = startIndex;
+        indexTail = newArray.length / 2 + indexTail;
+        elements = newArray;
     }
 
     @Override
