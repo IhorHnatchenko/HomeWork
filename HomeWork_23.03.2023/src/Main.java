@@ -8,7 +8,7 @@ public class Main {
         myArrayDeque.addToHead(32);
         myArrayDeque.addToHead(12);
 
-        myArrayDeque.addToHead(99);
+        //myArrayDeque.addToHead(99);
 
         myArrayDeque.addToTail(7);
         myArrayDeque.addToTail(44);
@@ -19,7 +19,7 @@ public class Main {
 
         System.out.println(myArrayDeque.peakHead());
         System.out.println(myArrayDeque.peakTail());
-        System.out.println(myArrayDeque.contains(11));
+        System.out.println(myArrayDeque.contains(66));
 
     }
 }

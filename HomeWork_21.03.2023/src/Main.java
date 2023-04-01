@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main  {
+public class Main {
 
     public static void main(String[] args) {
         String[][] input = {{"abc", "last"}, {"pklz", "yelp"}, {"rpng", "note"}, {"ppza", "xyz"}};
@@ -15,8 +15,8 @@ public class Main  {
         }
         List<Person> personList = new ArrayList<>();
         System.out.print("\n\nNames and last names in array list: ");
-        for(int i = 0; i < input.length; i++){
-            personList.add(new Person(input[i][0],input[i][1]));
+        for (int i = 0; i < input.length; i++) {
+            personList.add(new Person(input[i][0], input[i][1]));
         }
         System.out.println("\n" + personList);
 
@@ -36,13 +36,9 @@ public class Main  {
         System.out.print("\nList sort by name and last name:");
         List<Person> personListComparatorByNameAndLastName = personList;
         ComparatorByNameAndLastName comparatorByNameAndLastName = new ComparatorByNameAndLastName();
-        Collections.sort(personListComparatorByNameAndLastName,comparatorByNameAndLastName);
+        Collections.sort(personListComparatorByNameAndLastName, comparatorByNameAndLastName);
         System.out.println("\n" + personListComparatorByNameAndLastName);
-
-
-
-
-
+        
     }
 
     private static void objectComparison(String[][] input) {

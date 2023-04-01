@@ -66,11 +66,11 @@ public class MyArrayDeque implements MyDeque {
         Integer[] newArray = new Integer[newCapacity];
 
         int startIndex = elements.length / 2 + 1;
-        System.arraycopy(elements, startIndex, newArray, newArray.length / 2 + 1, newArray.length / 2 + indexTail);
+        System.arraycopy(elements, 0, newArray, 0, elements.length / 2 + 1);
 
         startIndex = newArray.length / 2 - indexHead - 1;
         if (indexTail > 0) {
-            System.arraycopy(elements, indexHead, newArray, startIndex, newArray.length / 2);
+            System.arraycopy(elements, elements.length / 2 + 2, newArray, newArray.length - elements.length / 2 + 2, elements.length / 2 + 2);
         }
 
         indexHead = startIndex;

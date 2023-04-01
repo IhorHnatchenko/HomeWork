@@ -75,7 +75,7 @@ public class MyLinkedList {
         Node node = new Node(i, null);
         Node curr = head;
         int jump = 0;       //Если я хочу что бы элемент добалялся после индекса, а не вместо. То эту переменную нужно изменить на -1.
-        while (jump < index -1) {
+        while (jump < index - 1) {
             curr = curr.getNext();
             jump++;
         }
@@ -131,7 +131,7 @@ public class MyLinkedList {
 
     public List<Node> castLinkedListToList(List<Node> integers) {
         Node curr = head;
-        for (int i = 0; i < sizeMyLinkedList(); i++){
+        for (int i = 0; i < sizeMyLinkedList(); i++) {
             integers.add(curr);
             curr = curr.getNext();
         }
