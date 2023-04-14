@@ -1,7 +1,8 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Main {
-
     public static void main(String[] args) {
         String[][] input = {{"Ihor", "Hnatchenko"}, {"Anna", "Hnatchenko"}, {"Bob", "Note"}, {"Yi", "Naruhami"}};
 
@@ -22,34 +23,26 @@ public class Main {
 
         System.out.print("\nList sort by name:");
         List<Person> personListSortByName = personList;
-        SortByName sortByName = new SortByName();
-        Collections.sort(personListSortByName, sortByName);
+        Comparator comparatorByName = (o1, o2) -> o1.getName().compareTo(o2.getName());
+        Collections.sort(personListSortByName, comparatorByName);
         System.out.println("\n" + personListSortByName);
 
         System.out.print("\nList sort by last name:");
         List<Person> personListSortByLastName = personList;
-        SortByLastName sortByLastName = new SortByLastName();
-        Collections.sort(personListSortByLastName, sortByLastName);
+        Comparator comparatorByLastName = (o1,o2) -> o1.getLastName().compareTo(o2.getLastName());
+        Collections.sort(personListSortByLastName, comparatorByLastName);
         System.out.println("\n" + personListSortByLastName);
+
 
 
         System.out.print("\nList sort by name and last name:");
         List<Person> personListComparatorByNameAndLastName = personList;
-        ComparatorByNameAndLastName comparatorByNameAndLastName = new ComparatorByNameAndLastName();
+        Comparator comparatorByNameAndLastName = (o1, o2) -> {
+            int sortByName = o1.getName().compareTo(o2.getName());
+            int sortByLastName = o1.getLastName().compareTo(o2.getLastName());
+            return sortByName == 0 ? sortByLastName : sortByName;
+        };
         Collections.sort(personListComparatorByNameAndLastName, comparatorByNameAndLastName);
         System.out.println("\n" + personListComparatorByNameAndLastName);
-        
-    }
-
-    private static void objectComparison(String[][] input) {
-        for (int i = 0; i < input.length; i++) {
-            for (int j = 0; j < input.length; j++) {
-                if (i == j) {
-                    break;
-                }
-                System.out.println("Comparison name " + i + " and " + j + ": " + input[i][0].equals(input[j][0]));
-            }
-
-        }
     }
 }
