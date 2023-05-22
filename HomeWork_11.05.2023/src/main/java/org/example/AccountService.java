@@ -3,6 +3,7 @@ package org.example;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+
 class AccountService {
     private static final Pattern IBAN_PATTERN = Pattern.compile("[A-Z]{2}\\d{1,32}");
     private static final Pattern CODE_PATTERN = Pattern.compile("\\d{6}");
@@ -164,6 +165,7 @@ class AccountService {
         }
         return null;
     }
+
     private void showBalance(Account account) {
         Account account1 = accountData.getAccount("AT483200000012345864");
         Account account2 = accountData.getAccount("AZ000000001234567890");
