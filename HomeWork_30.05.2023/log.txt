@@ -1,0 +1,58 @@
+A: Display the entire list of available trips.
+B: Sort the list in ascending order of price.
+C: Sort the list in descending order of price.
+D: Sort by price range.
+E: Find all available trips from the specified city.
+F: Sort in a range of cities.
+G: Output data like:
+ * Number of trips.
+ * Sort all trips by price from lowest to highest.
+ * For selected points of departure and arrival.
+H: Filter by date range.
+If you want to exit, press Z or z.
+
+Please enter your choice: User choice: A
+List of available trips:
+Trip{source='Tokio', destination='Warsaw', duration=14.5, price=1400.0, startDate=2023-01-27, returnDate=2023-01-28}
+Trip{source='Tokio', destination='Berlin', duration=14.5, price=1500.0, startDate=2023-02-20, returnDate=2023-02-25}
+Trip{source='Warsaw', destination='Berlin', duration=5.0, price=200.0, startDate=2023-03-10, returnDate=2023-03-12}
+Trip{source='Berlin', destination='Tokio', duration=18.5, price=1600.0, startDate=2023-04-05, returnDate=2023-04-10}
+Trip{source='Warsaw', destination='Tokio', duration=15.0, price=1700.0, startDate=2023-05-15, returnDate=2023-05-20}
+
+2023-06-04 13:54:44 - Display all trips.
+A: Display the entire list of available trips.
+B: Sort the list in ascending order of price.
+C: Sort the list in descending order of price.
+D: Sort by price range.
+E: Find all available trips from the specified city.
+F: Sort in a range of cities.
+G: Output data like:
+ * Number of trips.
+ * Sort all trips by price from lowest to highest.
+ * For selected points of departure and arrival.
+H: Filter by date range.
+If you want to exit, press Z or z.
+
+Please enter your choice: User choice: B
+List of trips sorted in ascending order of price:
+Trip{source='Warsaw', destination='Berlin', duration=5.0, price=200.0, startDate=2023-03-10, returnDate=2023-03-12}
+Trip{source='Tokio', destination='Warsaw', duration=14.5, price=1400.0, startDate=2023-01-27, returnDate=2023-01-28}
+Trip{source='Tokio', destination='Berlin', duration=14.5, price=1500.0, startDate=2023-02-20, returnDate=2023-02-25}
+Trip{source='Berlin', destination='Tokio', duration=18.5, price=1600.0, startDate=2023-04-05, returnDate=2023-04-10}
+Trip{source='Warsaw', destination='Tokio', duration=15.0, price=1700.0, startDate=2023-05-15, returnDate=2023-05-20}
+
+2023-06-04 13:55:10 - Sorted trips in ascending order of price
+A: Display the entire list of available trips.
+B: Sort the list in ascending order of price.
+C: Sort the list in descending order of price.
+D: Sort by price range.
+E: Find all available trips from the specified city.
+F: Sort in a range of cities.
+G: Output data like:
+ * Number of trips.
+ * Sort all trips by price from lowest to highest.
+ * For selected points of departure and arrival.
+H: Filter by date range.
+If you want to exit, press Z or z.
+
+Please enter your choice: 
