@@ -1,28 +1,37 @@
 package org.example.Exercise3;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.Callable;
 
-public class ResultPrinter implements Runnable {
+public class ResultPrinter implements Callable<List<String>> {
+    private String result;
+    private final Object monitor = new Object();
 
     @Override
-    public synchronized void run() {
-        while (!Thread.currentThread().isInterrupted()){
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException e) {
-                System.out.println("This thread is interrupted, bye!!");
-                break;
-            }
-            if(HippodromeApp.resultMap.size() == 3){
-                List<Horse> horses = new ArrayList<>(HippodromeApp.resultMap.keySet());
-                horses.sort(Comparator.comparingDouble(Horse::getStep));
-                horses.forEach(horse -> {
-                    long finishTime = HippodromeApp.resultMap.get(horse);
-                    System.out.println(horse + " " + new Date(finishTime));
-                });
-                Thread.currentThread().interrupt();
+    public List<String> call() {
+        synchronized (monitor) {
+            while (HippodromeApp.resultMap.size() < HippodromeApp.NUM_HORSES) {
+                try {
+                    monitor.wait(1);
+                } catch (InterruptedException e) {
+                    System.out.println("This thread is interrupted, bye!!");
+                    break;
+                }
+
             }
         }
 
+        List<String> results = new ArrayList<>();
+        HippodromeApp.resultMap.entrySet().stream().sorted(Map.Entry.comparingByValue())
+                .forEach(mapObject -> {
+                    long finishTime = mapObject.getValue();
+                    // и к выводу времени лучше добавить миллисекунды
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+                    String formattedTime = dateFormat.format(new Date(finishTime));
+                    result = mapObject.getKey() + " " + formattedTime;
+                    results.add(result);
+                });
+        return results;
     }
 }
