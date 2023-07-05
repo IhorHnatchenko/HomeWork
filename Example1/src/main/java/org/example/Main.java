@@ -15,6 +15,7 @@ public class Main {
         Запустите результаты.*/
 
         ApplicationContext context = new AnnotationConfigApplicationContext(ExamConfig.class);
+
         Exam exam = context.getBean(Exam.class);
 
         exam.examCheck();
